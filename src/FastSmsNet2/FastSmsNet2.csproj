@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AC9CAAF-980B-400E-9740-51655A30DCFB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastSmsNet2</RootNamespace>
+    <AssemblyName>FastSmsNet2</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\FastSms\Enums\ReportType.cs">
+      <Link>Enums\ReportType.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Exceptions\FastSmsException.cs">
+      <Link>Exceptions\FastSmsException.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Extensions\StringExtensions.cs">
+      <Link>Extensions\StringExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Localization\Resources.Designer.cs">
+      <Link>Localization\Resources.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Requests\BaseSendMessageRequest.cs">
+      <Link>Models\Requests\BaseSendMessageRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Requests\CreateUserRequest.cs">
+      <Link>Models\Requests\CreateUserRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Requests\ImportContactsRequest.cs">
+      <Link>Models\Requests\ImportContactsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Requests\SendMessageToGroupRequest.cs">
+      <Link>Models\Requests\SendMessageToGroupRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Requests\SendMessageToListRequest.cs">
+      <Link>Models\Requests\SendMessageToListRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Requests\SendMessageToUserRequest.cs">
+      <Link>Models\Requests\SendMessageToUserRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Responses\BaseReportResponse.cs">
+      <Link>Models\Responses\BaseReportResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Responses\ErrorMessageResponse.cs">
+      <Link>Models\Responses\ErrorMessageResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Responses\ImportStatusResponse.cs">
+      <Link>Models\Responses\ImportStatusResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Responses\InboundMessagesReportResponse.cs">
+      <Link>Models\Responses\InboundMessagesReportResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Responses\MessageReportResponse.cs">
+      <Link>Models\Responses\MessageReportResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Responses\MessageResponse.cs">
+      <Link>Models\Responses\MessageResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Responses\OutboxReportResponse.cs">
+      <Link>Models\Responses\OutboxReportResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Models\Responses\UsageReportResponse.cs">
+      <Link>Models\Responses\UsageReportResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Remote\HttpClient.cs">
+      <Link>Rempte\HttpClient.cs</Link>
+    </Compile>
+    <Compile Include="..\FastSms\Remote\IHttpClient.cs">
+      <Link>Rempte\IHttpClient.cs</Link>
+    </Compile>
+    <Compile Include="FastSmsClient.cs" />
+    <Compile Include="FastSmsErrors.cs" />
+    <Compile Include="IFastSmsClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportParser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\FastSms\Localization\Resources.resx">
+      <Link>Localization\Resources.resx</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

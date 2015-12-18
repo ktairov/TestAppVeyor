@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace FastSms.Exceptions {
 	/// <summary>
@@ -11,8 +10,7 @@ namespace FastSms.Exceptions {
 
 	    public FastSmsException ( string errorCode ) {
 			Code = errorCode;
-
-			var error = FastSmsErrors.Errors.FirstOrDefault( item => item.Key == errorCode ).Value;
+	        var error = FastSmsErrors.Errors.ContainsKey(errorCode) ? FastSmsErrors.Errors[errorCode] : null;
 			Message = error ?? "N/A";
 		}
 
