@@ -22,7 +22,7 @@ install:
 
 deploy:
   provider: NuGet
-  api_key: vx8qovf5anxdjgaxng4n81y0
+  api_key: 1b24e802-22f1-422c-8ce4-86379fb700ea
   artifact: TestAppVeyor
   on:
     branch: task_codereview
