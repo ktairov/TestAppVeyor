@@ -6,7 +6,7 @@ build:
   include_nuget_references: true
   verbosity: minimal
 after_build:
-- nuget pack src\FastSms\FastSms.csproj
+- nuget pack src\FastSms\FastSms.csproj  -Version "%APPVEYOR_BUILD_VERSION%"
 
 test:
   categories:
@@ -14,7 +14,7 @@ test:
     - Unit
 
 artifacts:
-- path: 'FastSms.nupkg'
+- path: '*.nupkg'
   name: TestAppVeyor
 install:
   - nuget restore src\FastSms.sln
