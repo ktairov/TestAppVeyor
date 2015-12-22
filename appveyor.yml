@@ -31,6 +31,7 @@ deploy:
   api_key: fa0bd176-3bdd-49d9-afd1-635b1965fa13
   artifact: TestAppVeyor
   on:
-    branch: task_codereview
-	appveyor_repo_tag: true
+      branch: task_codereview
+      appveyor_repo_tag: true
+
   
